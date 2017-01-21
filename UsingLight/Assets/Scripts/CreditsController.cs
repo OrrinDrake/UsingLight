@@ -17,7 +17,9 @@ public class CreditsController : MonoBehaviour {
 		
 	}
 
-
+    /// <summary>
+    /// Navigates to the home screen
+    /// </summary>
     public void GoHome()
     {
         SceneManager.LoadScene("MainMenu");
