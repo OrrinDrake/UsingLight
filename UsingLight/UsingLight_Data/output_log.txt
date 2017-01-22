@@ -17,14 +17,20 @@ Platform assembly: C:\Users\Orrin\Documents\GitHub\UsingLight\UsingLight\UsingLi
 Loading C:\Users\Orrin\Documents\GitHub\UsingLight\UsingLight\UsingLight_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Orrin\Documents\GitHub\UsingLight\UsingLight\UsingLight_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
 Loading C:\Users\Orrin\Documents\GitHub\UsingLight\UsingLight\UsingLight_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.017 seconds
+- Completed reload, in  0.020 seconds
 Platform assembly: C:\Users\Orrin\Documents\GitHub\UsingLight\UsingLight\UsingLight_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Orrin\Documents\GitHub\UsingLight\UsingLight\UsingLight_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 3.441176 ms
+UnloadTime: 3.591283 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 10.153604 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 301.
+Total: 0.363663 ms (FindLiveObjects: 0.026916 ms CreateObjectMapping: 0.034230 ms MarkObjects: 0.281158 ms  DeleteObjects: 0.020772 ms)
+
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 29cc -> priority: 1 
-  Thread -> id: 2ae0 -> priority: 1 
+  Thread -> id: 264c -> priority: 1 
+  Thread -> id: 3f8 -> priority: 1 

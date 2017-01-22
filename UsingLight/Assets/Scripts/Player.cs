@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Linq;
 
 public class Player : MonoBehaviour {
 
@@ -13,20 +11,25 @@ public class Player : MonoBehaviour {
     
     
     //Player properties
-    int health = 100;
+    int health = 3;
     int stamina = 100;
     bool canDamage = true; //Always true unless the shield is up or stamina = 0
-    float speed = 2.0f;
+    float speed = 4.0f;
     public GameObject bullet;
     public GameObject sword; 
     Vector3 positionOfBullet;
-    public Animator animator; 
+    //public Animator animator; 
     PlayerDirection playerDirection;
-    string currentAnimation;
+    public GameObject GameController;
+    public UIController script;
+    //string currentAnimation;
     
-	void Start () {
-        
-
+	void Start ()
+    {
+        positionOfBullet = transform.position;
+        positionOfBullet.y += .5f;
+        GameController = GameObject.FindGameObjectsWithTag("GameController").First();
+        script = GameController.GetComponent<UIController>();
 	}
 	
 	// Update is called once per frame
@@ -65,7 +68,7 @@ public class Player : MonoBehaviour {
         }
         else if (Input.GetKey(KeyCode.UpArrow))
         {
-            animator.Play("PlayerWalk");
+            //animator.Play("PlayerWalk");
             //transform.Translate((1) * Camera.main.transform.forward * Time.deltaTime);
             transform.position += speed * transform.up * Time.deltaTime;
             positionOfBullet = new Vector3(transform.position.x, transform.position.y + .5f, 0);
@@ -80,7 +83,7 @@ public class Player : MonoBehaviour {
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            animator.Play("WalkLeft");
+            //animator.Play("WalkLeft");
             //transform.Translate((-1) * Camera.main.transform.right * Time.deltaTime);
             transform.position -= speed * transform.right * Time.deltaTime;
             positionOfBullet = new Vector3(transform.position.x - .5f, transform.position.y, 0);
@@ -88,7 +91,7 @@ public class Player : MonoBehaviour {
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            animator.Play("WalkRight");
+            //animator.Play("WalkRight");
             //transform.Translate((1) * Camera.main.transform.right * Time.deltaTime);
             transform.position += speed * transform.right * Time.deltaTime;
             positionOfBullet = new Vector3(transform.position.x + .5f, transform.position.y, 0);
@@ -111,16 +114,22 @@ public class Player : MonoBehaviour {
 
 
     }
-    void TransitionAnimation(string animationName)
+    //void TransitionAnimation(string animationName)
+    //{
+    //    if (currentAnimation != animationName)
+    //    {
+    //        animator.Play(animationName);
+    //        currentAnimation = animationName;
+    //    }
+
+    //}
+
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (currentAnimation != animationName)
-        {
-            animator.Play(animationName);
-            currentAnimation = animationName;
-        }
-
+        script.playerCurrentHealth--;
+        script.SetCurrentHealth();
     }
-
     
 
     

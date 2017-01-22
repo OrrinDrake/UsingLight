@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour
     public Image Prefab;
     public GameObject canvas;
     private float HorizontalPosition = 1075f / 2f, VerticalPosition = 605f / 2f;
+    public Sprite black, white;
 
     // Use this for initialization
     void Start()
@@ -46,8 +47,8 @@ public class UIController : MonoBehaviour
         {
             healthRepresentation.Add((Instantiate(Prefab, canvas.transform) as Image));
             healthRepresentation[i].transform.localScale = Vector3.one;
-            healthRepresentation[i].transform.localPosition = new Vector3((-HorizontalPosition + 25), VerticalPosition -25, 0);
-            HorizontalPosition -= 75;
+            healthRepresentation[i].transform.localPosition = new Vector3((-HorizontalPosition + 10), VerticalPosition -25, 0);
+            HorizontalPosition -= 60;
         }
     }
 
@@ -61,11 +62,11 @@ public class UIController : MonoBehaviour
         {
             if(i+1> playerCurrentHealth)
             {
-                healthRepresentation[i].color = Color.black;
+                healthRepresentation[i].sprite = black;
             }
             else
             {
-                healthRepresentation[i].color = Color.white;
+                healthRepresentation[i].sprite = white;
             }
         }
     }
