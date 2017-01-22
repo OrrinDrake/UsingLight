@@ -18,6 +18,7 @@ public class Player : MonoBehaviour {
     bool canDamage = true; //Always true unless the shield is up or stamina = 0
     float speed = 2.0f;
     public GameObject bullet;
+    public GameObject sword; 
     Vector3 positionOfBullet;
     public Animator animator; 
     PlayerDirection playerDirection;
@@ -99,6 +100,13 @@ public class Player : MonoBehaviour {
             bullet.GetComponent<Bullets>().PlayerDirection = playerDirection.ToString();
             Instantiate(bullet, positionOfBullet, transform.rotation);
         }
+
+        if (Input.GetKeyUp(KeyCode.X))
+        {
+            sword.GetComponent<Sword>().PlayerDirection = playerDirection.ToString();
+            Instantiate(sword, new Vector3(transform.position.x, transform.position.y + .5f, 0), transform.rotation);
+        }
+            
 
 
 

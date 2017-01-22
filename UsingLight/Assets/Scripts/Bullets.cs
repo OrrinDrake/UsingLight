@@ -22,7 +22,6 @@ public class Bullets : MonoBehaviour {
         switch(PlayerDirection)
         {
             case "NE":
-
                 transform.position += speed * transform.up * Time.deltaTime;
                 transform.position += speed * transform.right * Time.deltaTime;
                 break;
