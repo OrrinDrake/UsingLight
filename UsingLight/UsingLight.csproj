@@ -81,7 +81,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CameraFollowsScript.cs" />
+    <Compile Include="Assets\CameraSmooth.cs" />
     <Compile Include="Assets\Scripts\Bullets.cs" />
     <Compile Include="Assets\Scripts\CreditsController.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
